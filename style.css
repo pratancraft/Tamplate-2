@@ -1,0 +1,999 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+    background: #f7f7f5;
+    color: #111;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button,
+input {
+    font-family: inherit;
+}
+
+.container {
+    width: min(1180px, 92%);
+    margin: auto;
+}
+
+
+/* NAVBAR */
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background: rgba(255,255,255,.92);
+    backdrop-filter: blur(18px);
+    border-bottom: 1px solid #eee;
+}
+
+.nav-container {
+    height: 78px;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.logo {
+    display: flex;
+    flex-direction: column;
+    font-family: "Montserrat";
+    line-height: 1;
+}
+
+.logo span {
+    font-size: 21px;
+    font-weight: 800;
+    letter-spacing: 3px;
+}
+
+.logo strong {
+    font-size: 9px;
+    letter-spacing: 5px;
+    margin-top: 5px;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 28px;
+    margin-left: auto;
+}
+
+.nav-menu a {
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.nav-menu a:hover {
+    opacity: .55;
+}
+
+.nav-shop {
+    background: #111;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 30px;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.menu-button {
+    display: none;
+    background: none;
+    border: 0;
+    font-size: 25px;
+}
+
+
+/* HERO */
+
+.hero {
+    min-height: 760px;
+    padding-top: 130px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 75% 40%,
+            #d9e1e5,
+            transparent 35%
+        ),
+        linear-gradient(
+            135deg,
+            #fff,
+            #eceeea
+        );
+}
+
+.hero-overlay {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    background: rgba(255,255,255,.5);
+    right: -150px;
+    top: 80px;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 1.2fr .8fr;
+    align-items: center;
+    gap: 70px;
+}
+
+.eyebrow,
+.section-label {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: #777;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-family: "Montserrat";
+    font-size: clamp(55px, 7vw, 92px);
+    line-height: .94;
+    letter-spacing: -5px;
+}
+
+.hero h1 span {
+    display: block;
+    color: #777;
+}
+
+.hero-text > p {
+    max-width: 600px;
+    margin-top: 28px;
+    font-size: 17px;
+    color: #666;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 12px;
+    margin-top: 35px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    min-height: 50px;
+    padding: 0 25px;
+    border-radius: 5px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 700;
+    transition: .3s;
+}
+
+.btn-dark {
+    background: #111;
+    color: white;
+}
+
+.btn-dark:hover {
+    background: #333;
+    transform: translateY(-3px);
+}
+
+.btn-light {
+    background: white;
+    border: 1px solid #ddd;
+}
+
+.btn-light:hover {
+    background: #111;
+    color: white;
+}
+
+.btn-white {
+    background: white;
+    color: #111;
+}
+
+.hero-trust {
+    display: flex;
+    gap: 40px;
+    margin-top: 55px;
+}
+
+.hero-trust div {
+    display: flex;
+    flex-direction: column;
+}
+
+.hero-trust strong {
+    font-size: 22px;
+}
+
+.hero-trust span {
+    font-size: 11px;
+    color: #888;
+}
+
+
+/* HERO CARD */
+
+.hero-card {
+    background: rgba(255,255,255,.75);
+    border: 1px solid rgba(0,0,0,.08);
+    border-radius: 25px;
+    padding: 25px;
+    box-shadow: 0 30px 70px rgba(0,0,0,.1);
+    transform: rotate(2deg);
+}
+
+.hero-card-label {
+    font-size: 10px;
+    letter-spacing: 2px;
+    font-weight: 800;
+}
+
+.hero-product {
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.product-shape {
+    width: 250px;
+    height: 150px;
+    border-radius: 30px;
+    background: linear-gradient(
+        145deg,
+        #fff,
+        #9da4a8
+    );
+    box-shadow: 0 25px 40px rgba(0,0,0,.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.product-shape span {
+    font-family: "Montserrat";
+    font-size: 80px;
+    font-weight: 800;
+    color: rgba(255,255,255,.7);
+}
+
+.hero-card-info span {
+    font-size: 10px;
+    color: #888;
+    letter-spacing: 2px;
+}
+
+.hero-card-info h3 {
+    font-family: "Montserrat";
+    font-size: 25px;
+    margin: 4px 0 10px;
+}
+
+.hero-card-info a {
+    font-size: 12px;
+    font-weight: 700;
+}
+
+
+/* SOCIAL BAR */
+
+.social-bar {
+    background: #111;
+    color: white;
+}
+
+.social-bar-inner {
+    min-height: 75px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.social-bar-inner > span {
+    font-size: 12px;
+    color: #888;
+}
+
+.social-mini {
+    display: flex;
+    gap: 25px;
+}
+
+.social-mini a {
+    font-size: 12px;
+    font-weight: 700;
+}
+
+
+/* SECTIONS */
+
+.section {
+    padding: 110px 0;
+}
+
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    margin-bottom: 45px;
+}
+
+.section-heading h2 {
+    font-family: "Montserrat";
+    font-size: clamp(38px,5vw,60px);
+    line-height: 1;
+    letter-spacing: -3px;
+}
+
+.section-heading p {
+    color: #777;
+    max-width: 600px;
+    margin-top: 18px;
+}
+
+.center {
+    text-align: center;
+    display: block;
+}
+
+.center p {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.product-count {
+    color: #777;
+    font-size: 13px;
+}
+
+.product-count strong {
+    color: #111;
+    font-size: 25px;
+}
+
+
+/* TOOLBAR */
+
+.product-toolbar {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 35px;
+}
+
+.filters {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.filter {
+    border: 1px solid #ddd;
+    background: white;
+    border-radius: 30px;
+    padding: 10px 18px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.filter.active,
+.filter:hover {
+    background: #111;
+    color: white;
+}
+
+.search {
+    position: relative;
+}
+
+.search input {
+    width: 240px;
+    height: 43px;
+    border: 1px solid #ddd;
+    border-radius: 30px;
+    padding: 0 40px 0 17px;
+    outline: none;
+}
+
+.search span {
+    position: absolute;
+    right: 15px;
+    top: 9px;
+}
+
+
+/* ==============================
+   PRODUCTS
+============================== */
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+    align-items: stretch;
+}
+
+.product-card {
+    min-width: 0;
+    background: #fff;
+    border: 1px solid #e7e7e7;
+    border-radius: 16px;
+    overflow: hidden;
+    transition: transform .3s, box-shadow .3s;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, .10);
+}
+
+/* AREA FOTO: UKURAN SERAGAM */
+.product-image {
+    position: relative;
+    width: 100%;
+    height: 260px;
+    overflow: hidden;
+    background: #e9ebec;
+}
+
+/* GAMBAR PRODUK */
+.product-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* WATERMARK */
+.product-image::after {
+    content: "HAFIDZ";
+    position: absolute;
+    right: 15px;
+    bottom: 12px;
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: #aaa;
+    pointer-events: none;
+}
+
+/* GAMBAR GAGAL DIMUAT */
+.product-image.image-error::before {
+    content: "Foto belum tersedia";
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    color: #777;
+    background: #e9ebec;
+}
+
+/* PRODUK ILUSTRASI LAMA */
+.fake-product {
+    width: 220px;
+    height: 115px;
+    border-radius: 40px 50px 20px 20px;
+    background: linear-gradient(145deg, #fff, #aaa);
+    border: 2px solid #888;
+    box-shadow: 0 20px 30px rgba(0, 0, 0, .2);
+    position: relative;
+}
+
+.fake-product::before {
+    content: "";
+    position: absolute;
+    width: 115px;
+    height: 55px;
+    top: -30px;
+    left: 50px;
+    background: #cfd3d4;
+    border: 2px solid #777;
+    border-radius: 50px 50px 5px 5px;
+}
+
+/* INFORMASI PRODUK */
+.product-info {
+    padding: 24px;
+}
+
+.product-category {
+    color: #999;
+    font-size: 10px;
+    letter-spacing: 2px;
+    font-weight: 800;
+}
+
+.product-info h3 {
+    font-family: "Montserrat", sans-serif;
+    font-size: 23px;
+    margin: 5px 0;
+}
+
+.product-price {
+    font-size: 18px;
+    font-weight: 800;
+}
+
+/* TOMBOL DETAIL DAN CHECKOUT */
+.product-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin-top: 20px;
+}
+
+.product-actions button,
+.product-actions a {
+    min-width: 0;
+    min-height: 42px;
+    padding: 8px;
+    border: 1px solid #111;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    background: #fff;
+}
+
+.product-actions a {
+    background: #111;
+    color: #fff;
+}
+
+
+/* PROMO */
+
+.promo {
+    background: #111;
+    color: white;
+}
+
+.promo-container {
+    min-height: 430px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
+}
+
+.promo h2 {
+    font-family: "Montserrat";
+    font-size: clamp(40px,6vw,70px);
+    line-height: .95;
+    max-width: 750px;
+}
+
+.promo p {
+    color: #999;
+    margin: 25px 0;
+}
+
+.promo-number {
+    font-family: "Montserrat";
+    font-size: 280px;
+    font-weight: 800;
+    color: #222;
+}
+
+
+/* WHY */
+
+.why {
+    background: #eeefed;
+}
+
+.why-grid {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 18px;
+}
+
+.why-card {
+    background: white;
+    padding: 35px;
+    border-radius: 14px;
+    border: 1px solid #e5e5e5;
+    transition: .3s;
+}
+
+.why-card:hover {
+    transform: translateY(-7px);
+}
+
+.why-icon {
+    font-size: 32px;
+}
+
+.why-card h3 {
+    font-family: "Montserrat";
+    margin: 25px 0 10px;
+}
+
+.why-card p {
+    color: #777;
+    font-size: 13px;
+}
+
+
+/* SOCIAL */
+
+.social-grid {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 15px;
+}
+
+.social-card {
+    min-height: 120px;
+    padding: 25px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    border-radius: 15px;
+    background: white;
+    border: 1px solid #ddd;
+    transition: .3s;
+}
+
+.social-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0,0,0,.1);
+}
+
+.social-icon {
+    width: 55px;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #111;
+    color: white;
+    border-radius: 50%;
+    font-size: 24px;
+}
+
+.social-card div:nth-child(2) {
+    flex: 1;
+}
+
+.social-card span {
+    display: block;
+    font-size: 9px;
+    letter-spacing: 2px;
+    color: #888;
+}
+
+.social-card strong {
+    display: block;
+    font-family: "Montserrat";
+    margin-top: 4px;
+}
+
+.social-card b {
+    font-size: 22px;
+}
+
+
+/* CONTACT */
+
+.contact {
+    padding: 0 0 110px;
+}
+
+.contact-box {
+    background: #e3e6e3;
+    border-radius: 20px;
+    padding: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.contact-box h2 {
+    font-family: "Montserrat";
+    font-size: 55px;
+    line-height: 1;
+}
+
+.contact-box p {
+    color: #666;
+    margin-top: 15px;
+}
+
+
+/* FOOTER */
+
+footer {
+    background: #080808;
+    color: white;
+}
+
+.footer-grid {
+    padding: 70px 0;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 50px;
+}
+
+.footer-logo {
+    font-family: "Montserrat";
+    font-size: 25px;
+    font-weight: 800;
+}
+
+.footer-logo span {
+    display: block;
+    font-size: 9px;
+    letter-spacing: 5px;
+}
+
+.footer-grid p {
+    color: #777;
+    max-width: 350px;
+    margin-top: 15px;
+    font-size: 13px;
+}
+
+.footer-grid h4 {
+    margin-bottom: 15px;
+}
+
+.footer-grid > div > a:not(.footer-logo) {
+    display: block;
+    color: #888;
+    margin: 9px 0;
+    font-size: 13px;
+}
+
+.footer-social {
+    display: flex;
+    gap: 8px;
+    margin-top: 25px;
+}
+
+.footer-social a {
+    width: 35px;
+    height: 35px;
+    background: #1d1d1d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 10px;
+}
+
+.copyright {
+    text-align: center;
+    border-top: 1px solid #222;
+    padding: 20px;
+    color: #666;
+    font-size: 11px;
+}
+
+
+/* FLOATING WHATSAPP */
+
+.floating-whatsapp {
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+    width: 60px;
+    height: 60px;
+    background: #111;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    z-index: 900;
+    box-shadow: 0 10px 30px rgba(0,0,0,.25);
+}
+
+
+/* MODAL */
+
+.modal {
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal.show {
+    display: flex;
+}
+
+.modal-background {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,.7);
+}
+
+.modal-content {
+    position: relative;
+    z-index: 2;
+    background: white;
+    width: min(600px,90%);
+    padding: 40px;
+    border-radius: 15px;
+}
+
+.modal-close {
+    position: absolute;
+    right: 18px;
+    top: 12px;
+    border: 0;
+    background: none;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+
+/* MOBILE */
+
+@media(max-width:950px) {
+
+    .nav-menu {
+        position: absolute;
+        top: 78px;
+        left: 0;
+        width: 100%;
+        background: white;
+        padding: 25px;
+        display: none;
+        flex-direction: column;
+    }
+
+    .nav-menu.active {
+        display: flex;
+    }
+
+    .menu-button {
+        display: block;
+    }
+
+    .nav-shop {
+        margin-left: auto;
+    }
+
+    .hero-content {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-card {
+        display: none;
+    }
+
+    .products-grid {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .why-grid {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .footer-grid {
+        grid-template-columns: 2fr 1fr 1fr;
+    }
+
+}
+
+
+@media(max-width:650px) {
+
+    .nav-shop {
+        display: none;
+    }
+
+    .hero {
+        padding-top: 120px;
+        padding-bottom: 70px;
+    }
+
+    .hero h1 {
+        font-size: 52px;
+    }
+
+    .hero-trust {
+        gap: 20px;
+    }
+
+    .social-bar-inner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+        padding: 20px 0;
+    }
+
+    .social-mini {
+        gap: 15px;
+        flex-wrap: wrap;
+    }
+
+    .section {
+        padding: 75px 0;
+    }
+
+    .section-heading {
+        display: block;
+    }
+
+    .product-toolbar {
+        flex-direction: column;
+    }
+
+    .search input {
+        width: 100%;
+    }
+
+    .products-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .why-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .social-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .promo-number {
+        display: none;
+    }
+
+    .contact-box {
+        padding: 40px 25px;
+        display: block;
+    }
+
+    .contact-box h2 {
+        font-size: 42px;
+    }
+
+    .contact-box .btn {
+        margin-top: 25px;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+}
